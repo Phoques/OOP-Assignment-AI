@@ -8,8 +8,10 @@ public class CharacterMovement : MonoBehaviour
 {
     public GameObject player;
     [SerializeField] float _speed;
+    [SerializeField] float _speedBoost;
     bool isCatching = false;
     public Text helpText;
+
 
 
 
@@ -38,6 +40,11 @@ public class CharacterMovement : MonoBehaviour
         Vector3 moveDirection = new Vector3(xDir, 0f, 0f);
 
         transform.position += moveDirection * _speed * Time.deltaTime;
+
+        if (isCatching)
+        {
+            transform.position += moveDirection * _speedBoost * Time.deltaTime;
+        }
     }
 
 

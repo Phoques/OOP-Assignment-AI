@@ -14,8 +14,8 @@ public class HighScoreManager : MonoBehaviour
     public void Start()
     {
         GameStarted();
-        HighScoreData highscrore = saveSystem.Load();
-        data = new HighScoreData(highscrore.score);
+        HighScoreData highscore = saveSystem.Load();
+        data = new HighScoreData(highscore.score);
         highscoreDisplay.text = "Highscore = " + data.score;
     }
 
